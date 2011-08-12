@@ -354,7 +354,7 @@ default_cfg =\
   "links =\n"
   "# Source files or patterns to ignore. Supports regexp syntax.\n"
   "# E.g; To ignore main.d and all source files in the test/ directory,\n"
-  "# you would use: \"main.d test/*\"\n"
+  "# you would use: \"main.d, test/*\"\n"
   "ignore =\n"
   "\n"
   "[DDOC]\n"
@@ -392,7 +392,7 @@ def scan_sources(source_dir, ignore):
                     source = source[2:]
                 for exp in ignore:
                     try:
-                        if(re.compile(exp).match(source)):
+                        if(re.compile(exp.strip()).match(source)):
                             return
                     except re.error as error:
                         print("Ignore expression is not a valid regexp: ", exp,
@@ -621,9 +621,9 @@ def main():
         links = []
         if output["links"] != "":
             for link in output["links"].split(","):
-                parts = link.split(" ")
+                parts = link.split(" ", 1)
                 links.append((parts[0].strip(), parts[1].strip()))
-        ignore = output["ignore"].split(" ")
+        ignore = output["ignore"].split(",")
         if ignore == [""]:
             ignore = []
 
