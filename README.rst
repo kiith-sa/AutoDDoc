@@ -2,23 +2,23 @@
 README
 ======
 
-**AutoDDoc** is a Python script used that generates documentation for D 
+**AutoDDoc** is a Python script that generates documentation for D 
 language projects using D's builtin DDoc tool.
 
-AutoDDoc is meant to be a simple, single file tool. It can only generate HTML,
+AutoDDoc is meant to be a simple single file tool. It can only generate HTML,
 and has some basic configuration options to set project properties, style of
 the generated documentation and so on.
 
-The goal is to make it as simple as possible to generate basic DDoc 
-documentation for a project. With AutoDDoc, there is no need to write a custom
-makefile or script just to handle documentation.
+The goal is to make it as simple as possible to generate basic documentation
+for a D project. With AutoDDoc, there is no need to write a custom makefile
+or script just to handle documentation.
 
 
 --------
 Tutorial
 --------
 
-1. Copy the script to your project directory and move into that directory.
+1. Copy ``autoddoc.py`` to your project directory and move into that directory.
    Relative to this directory, module names must match their filenames,
    so e.g. module ``pkg.util`` would be in file ``./pkg/util.d`` .
 2. Generate AutoDDoc configuation file. To do this, type
@@ -43,7 +43,7 @@ Credits
 
 AutoDDoc was created by Ferdinand Majerech aka Kiith-Sa, kiithsacmp[AT]gmail.com 
 
-Some of the CSS code and DDoc macros was created by 
+Most of the CSS code and DDoc macros were created by 
 `Digital Mars <http://www.digitalmars.com>`_, creators of the D programming language.
 
 AutoDDoc was created using Vim on Kubuntu Linux, as a tool for the 
